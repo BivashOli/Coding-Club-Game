@@ -1,6 +1,6 @@
 package core.components;
 
-import core.Entity;
+import core.entities.Entity;
 
 public class Component {
 

@@ -3,6 +3,8 @@ package core;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
+import core.entities.Entity;
+
 public class Scene {
 
 	public static LinkedList<Scene> scenes = new LinkedList<Scene>();

@@ -1,8 +1,9 @@
 package test;
 
 import java.awt.event.KeyEvent;
+import core.entities.Entity;
 
-import core.Entity;
+
 import core.KeyInput;
 import core.Scene;
 import core.components.Physics;
