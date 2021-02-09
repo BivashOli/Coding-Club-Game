@@ -1,11 +1,12 @@
 package core;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable{
 
-	
+	public static double delta = 0;
 	private boolean running = false;
 	private Display display;
 	
@@ -48,7 +49,7 @@ public class Game implements Runnable{
 		//START RENDERING 
 		
 		//background set to black, so every frame the screen is painted black
-		g.setColor(Color.BLACK);
+		g.setColor(Color.YELLOW);
 		g.fillRect(0, 0, Display.WIDTH+50, Display.HEIGHT+50);
 		
 		scene.render(g); 
@@ -78,7 +79,7 @@ public class Game implements Runnable{
 	public void run() {
 		int fps = 60;
 		double timePerTick = 1000000000 / fps;
-		double delta = 0;
+		//double delta = 0;
 		long now;
 		long lastTime = System.nanoTime();
 		long timer = 0;
@@ -99,6 +100,7 @@ public class Game implements Runnable{
 
 			if (timer >= 1000000000) {
 				System.out.println("Ticks and Frames: " + ticks);
+			//	System.out.println(delta);
 				ticks = 0;
 				timer = 0;
 			}

@@ -1,13 +1,33 @@
 package core;
+
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+import java.util.LinkedList;
+
+import core.components.Component;
 
 public class Entity {
 		
 	protected int id;
-	protected int x, y, width, height;
+	protected double x, y, width, height;
 	protected Scene scene;
 	protected String texture;
+	protected LinkedList<Component> components = new LinkedList<Component>();
+	
+	protected void addComponent(Component component) {
+		components.add(component);
+		component.entity = this;
+	}
+	
+	public boolean collides(Entity entity) {
+		return getBounds().intersects(entity.getBounds()); 
+	}
+	
+	public Rectangle2D getBounds() {
+		return new Rectangle2D.Double(x, y, width, height);	
+	}
 	
 	public int getId() {
 		return id;
@@ -17,31 +37,31 @@ public class Entity {
 		this.id = id;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public int getWidth() {
+	public double getWidth() {
 		return width;
 	}
 
-	public void setWidth(int width) {
+	public void setWidth(double width) {
 		this.width = width;
 	}
 
-	public int getHeight() {
+	public double getHeight() {
 		return height;
 	}
 
@@ -63,19 +83,27 @@ public class Entity {
 		this.scene = scene;
 		
 		scene.addEntity(this); 
+		width = 32;
+		height = 32;
 		init();
 	}
 	
 	public void init() {
-		width = 32;
-		height = 32;
+	
 	}
 	
 	public void render (Graphics g) {
 		g.setColor(Color.BLUE);
-		g.fillRect(x, y, width, height); 
+		g.fillRect((int)x, (int)y, (int)width, (int)height); 
 	}
 	
-	public void update() {}
+	public void action() {}
+	
+	public void update() {
+		for(Component c : components) {
+			c.update();
+		}
+		action();
+	}
 
 }
