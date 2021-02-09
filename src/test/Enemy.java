@@ -1,6 +1,6 @@
 package test;
 
-import core.Entity;
+import core.entities.Entity;
 import core.Scene;
 import core.components.Physics;
 

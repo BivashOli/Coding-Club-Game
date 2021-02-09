@@ -1,10 +1,8 @@
 package core.components.systems;
 
-import java.util.LinkedList;
-
-import core.Entity;
 import core.Game;
 import core.components.Physics;
+import core.entities.Entity;
 
 public class PhysicsEngine {
 
