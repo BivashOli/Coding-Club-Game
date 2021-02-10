@@ -7,17 +7,38 @@ import core.components.Component;
 public class PlayerHealth extends Component {
 	
 	private int playerhealth;
+	private int maxplayerhealth;
 	public PlayerHealth() {
 		playerhealth = 100;
+		maxplayerhealth = 100;
 	}
 	public int getPlayerHealth() {
 		
 		return playerhealth;
 	}
 	
+	public void setMaxPlayerHealth(int x) {
+		maxplayerhealth = x;
+	}
 
-	public void addPlayerHealth(int x) {
-		if (x + playerhealth > 100)
+	public int getMaxPlayerHealth() {
+		return maxplayerhealth;
+	}
+	
+	public void increaseMaxPlayerHealth(int x) {
+		maxplayerhealth +=x;
+		
+	}
+	
+	public void decreaseMaxPlayerHealth(int x ) {
+		maxplayerhealth -= x;
+	}
+	public void setPlayerHealth(int x) {
+		playerhealth = x;
+		
+	}
+	public void healPlayerHealth(int x) {
+		if (x + playerhealth >= maxplayerhealth)
 			playerhealth = 100;
 		else
 			playerhealth =+ x;
@@ -25,8 +46,8 @@ public class PlayerHealth extends Component {
 	
 
 	
-	public void removePlayerHealth(int x) {
-		if (playerhealth - x> 0) {
+	public void damagePlayerHealth(int x) {
+		if (playerhealth - x <= 0) {
 			playerhealth = 0;
 			System.out.println("You are dead haha loser!");
 			//death function here eventually?
@@ -38,9 +59,9 @@ public class PlayerHealth extends Component {
 	public void update() {
 		
 		
-//		PlayerHealth ph = (PlayerHealth)
+//		PlayerHealth ph = (PlayerHealth) entity.components.get(1);
 //		
-//		entity.components.get(1);
+//		
 //
 //		ph.removePlayerHealth(11);
 //		System.out.println(playerhealth);
