@@ -21,5 +21,9 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-/core/
+/.classpath
+/.gitattributes
+/.gitignore
+/.project
+/.settings/
 /game/
