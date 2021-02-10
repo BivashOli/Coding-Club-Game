@@ -58,7 +58,7 @@ public class Health extends Component {
 //		System.out.println(playerhealth);
 		
 		//so i added some changes to the game library and u can just do this instead of the above
-		Health h = entity.getComponent("Health");
+		Health h = entity.findComponent("Health");
 		h.remove(2); 
 	}
 }

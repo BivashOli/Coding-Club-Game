@@ -50,7 +50,7 @@ public class Entity {
 	public LinkedList<Component> components = new LinkedList<Component>();
 
 	
-	public <T extends Component> T getComponent(String name) {
+	public <T extends Component> T findComponent(String name) {
 		for(Component component : components) {
 			if(component.getName().equals(name)) {
 				//return type.cast(component; 

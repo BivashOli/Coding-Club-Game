@@ -9,7 +9,7 @@ public class TestScene extends Scene {
 	
 		Player player = new Player(30, 30, this);
 	
-	}
+ 	}
 	public void action() {
 		
 		
