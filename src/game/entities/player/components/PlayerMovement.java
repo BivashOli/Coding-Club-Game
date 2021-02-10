@@ -24,16 +24,21 @@ public class PlayerMovement extends Component {
 		if (KeyInput.get(KeyEvent.VK_SHIFT)) {
 			if(stamina != 0) {
 				stamina-= 1;
-				System.out.println(stamina);
 			}
-			if (stamina > 0)
+			System.out.println(stamina);
+			if (stamina > 0) {
 				currentvelocity = defaultvelocity+3;
+				System.out.println("velocity is at 8");
+			}
+			else
+				currentvelocity = defaultvelocity;
 	    }
 		//if not pressing shift, stamina regens and resets current velocity
 		else {
-			if (stamina != 100)
-				stamina += 1;
 			currentvelocity = defaultvelocity;
+			if (stamina != 100) {
+				stamina += 1;
+			}
 		}
 		
 		//move left
