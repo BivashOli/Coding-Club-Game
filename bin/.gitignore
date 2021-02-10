@@ -26,4 +26,9 @@ $RECYCLE.BIN/
 /.gitignore
 /.project
 /.settings/
+<<<<<<< HEAD
+=======
+/core/
+>>>>>>> 8efd28c07bc9c72016618b40fabda975d9e2bf16
 /game/
+/test/
