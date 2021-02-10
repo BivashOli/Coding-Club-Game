@@ -15,7 +15,7 @@ public class Entity {
 	protected double x, y, width, height;
 	protected Scene scene;
 	protected String texture;
-	protected LinkedList<Component> components = new LinkedList<Component>();
+	public LinkedList<Component> components = new LinkedList<Component>();
 	
 	protected void addComponent(Component component) {
 		components.add(component);

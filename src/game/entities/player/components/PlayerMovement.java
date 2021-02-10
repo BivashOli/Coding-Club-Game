@@ -34,6 +34,8 @@ public class PlayerMovement extends Component {
 		    	y+=5;
 		    	entity.setY(y);
 		    }
+		    
+		
 		
 	}
 	
