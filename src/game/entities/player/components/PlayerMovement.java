@@ -8,6 +8,9 @@ import core.KeyInput;
 
 public class PlayerMovement extends Component {
 	
+	//added a variable for the speed
+	public double speed = 5;
+	
 	public void update() {
 		
 		double y = entity.getY();
@@ -15,23 +18,23 @@ public class PlayerMovement extends Component {
 		
 		    
 		    if (KeyInput.get(KeyEvent.VK_A)) {
-		    	x-=5;
+		    	x-=speed;
 		    	entity.setX(x);
 		 
 		    }
 
 		    if (KeyInput.get(KeyEvent.VK_D)) {
-		        x+=5;
+		        x+=speed;
 		    	entity.setX(x);
 		    }
 
 		    if (KeyInput.get(KeyEvent.VK_W)) {
-		    	y-=5;
+		    	y-=speed;
 		    	entity.setY(y);
 		    }
 
 		    if (KeyInput.get(KeyEvent.VK_S)) {
-		    	y+=5;
+		    	y+=speed;
 		    	entity.setY(y);
 		    }
 		    

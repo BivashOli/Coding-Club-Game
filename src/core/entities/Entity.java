@@ -3,11 +3,14 @@ package core.entities;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 
+
 import core.Scene;
 import core.components.Component;
+import core.gfx.Texture;
 
 public class Entity {
 		
@@ -16,6 +19,17 @@ public class Entity {
 	protected Scene scene;
 	protected String texture;
 	public LinkedList<Component> components = new LinkedList<Component>();
+
+	
+	public <T extends Component> T getComponent(String name) {
+		for(Component component : components) {
+			if(component.getName().equals(name)) {
+				//return type.cast(component; 
+				return (T) component;
+			}
+		}
+		return null;
+	}
 	
 	protected void addComponent(Component component) {
 		components.add(component);
@@ -93,9 +107,13 @@ public class Entity {
 	
 	}
 	
+	//private Toolkit t = Toolkit.getDefaultToolkit();
 	public void render (Graphics g) {
-		g.setColor(Color.BLUE);
+	g.setColor(Color.BLUE);
 		g.fillRect((int)x, (int)y, (int)width, (int)height); 
+	//	g.drawImage(t.getImage("Picture.PNG"), (int)x, (int)y, (int)width, (int)height, null);
+
+		//g.drawImage(Texture.loadImage("/res/t.PNG"), (int)x, (int)y, (int)width, (int)height, null);
 	}
 	
 	public void action() {}

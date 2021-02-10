@@ -17,6 +17,13 @@ public class Game implements Runnable{
 	private KeyInput keyInput;
 	public static Scene scene;
 	
+	public static void setScene(Scene scene) {
+		Game.scene = scene;
+	}
+	
+	public static Scene currentScene(Scene scene) {
+		return Game.scene;
+	}
 
 	
 	public Game() {
@@ -49,7 +56,7 @@ public class Game implements Runnable{
 		//START RENDERING 
 		
 		//background set to black, so every frame the screen is painted black
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Display.WIDTH+50, Display.HEIGHT+50);
 		
 		scene.render(g); 

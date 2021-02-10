@@ -10,7 +10,9 @@ public class Main {
 		Game game = new Game();
 		
 		TestScene test = new TestScene();
-		game.scene = test;
+		//i changed line 14 to a function
+		//to make it more intuitive 
+		game.setScene(test); 
 		
 		game.start();
 	}

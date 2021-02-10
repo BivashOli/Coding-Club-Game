@@ -17,24 +17,25 @@ public class Player extends Entity{
 	}
 	
 	public void init() {
+		texture = "/res/chicken.jpg";
+
 		addComponent(new Physics()); 
-		texture = "chicken.png";
-		p = (Physics) components.get(0);
+		//p = (Physics) components.get(0);
 	}
 	
 	public void action() {
 		if(KeyInput.get(KeyEvent.VK_D)) {
-			//x+=6;
-			p.velX = 6;
-		}else if(KeyInput.get(KeyEvent.VK_A)) {
-			//x-=6;
-			p.velX = -6;
-		}else if(KeyInput.get(KeyEvent.VK_W)) {
-			//y-=6;
-			p.velY = -6;
-		}else if(KeyInput.get(KeyEvent.VK_S)) {
-			//y+=6;
-			p.velY = 6;
+			x+=6;
+			//p.velX = 6;
+		} if(KeyInput.get(KeyEvent.VK_A)) {
+			x-=6;
+			//p.velX = -6;
+		} if(KeyInput.get(KeyEvent.VK_W)) {
+			y-=6;
+			//p.velY = -6;
+		} if(KeyInput.get(KeyEvent.VK_S)) {
+			y+=6;
+			//p.velY = 6;
 		}
 	}
 
