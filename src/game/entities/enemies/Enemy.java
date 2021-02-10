@@ -10,6 +10,7 @@ public abstract class Enemy extends Entity{
 		super(x, y, scene);
 	}
 	
-	public abstract void init();
+	//there is already an init() built in entity  - bivash
+	//public abstract void init();
 
 }
