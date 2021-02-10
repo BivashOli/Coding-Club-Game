@@ -23,6 +23,15 @@ public class Scene {
 	protected String name;
 	public LinkedList<Entity> entities = new LinkedList<Entity>();
 	
+	public Entity getEntity(String name) {
+		for(Entity entity : entities) {
+			if(entity.getName().equals(name)) {
+				return entity;
+			}
+		}
+		return null;
+	}
+	
 	public Scene() {
 
 		//PhysicsEngine.entities = new LinkedList<Entity>();
