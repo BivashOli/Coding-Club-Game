@@ -13,7 +13,7 @@ public class Player extends Entity{
 	}
 	
 	public void init() {
-		texture = new Texture("/res/chicken.jpg");
+		texture = new Texture("/res/t.png");
 		addComponent(new PlayerMovement());
 	 	addComponent(new Health(100));
 	}
