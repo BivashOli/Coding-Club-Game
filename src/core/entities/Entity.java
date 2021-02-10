@@ -5,25 +5,26 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
-
 
 import core.Scene;
 import core.components.Component;
 import core.gfx.Texture;
 
 public class Entity {
-		
+
 	protected int id;
 	protected double x, y, width, height;
 	protected Scene scene;
-	protected String texture;
+	protected Texture texture;
 	protected String name;
-	public String getTexture() {
+
+	public Texture getTexture() {
 		return texture;
 	}
 
-	public void setTexture(String texture) {
+	public void setTexture(Texture texture) {
 		this.texture = texture;
 	}
 
@@ -49,30 +50,29 @@ public class Entity {
 
 	public LinkedList<Component> components = new LinkedList<Component>();
 
-	
 	public <T extends Component> T findComponent(String name) {
-		for(Component component : components) {
-			if(component.getName().equals(name)) {
-				//return type.cast(component; 
+		for (Component component : components) {
+			if (component.getName().equals(name)) {
+				// return type.cast(component;
 				return (T) component;
 			}
 		}
 		return null;
 	}
-	
+
 	protected void addComponent(Component component) {
 		components.add(component);
 		component.entity = this;
 	}
-	
+
 	public boolean collides(Entity entity) {
-		return getBounds().intersects(entity.getBounds()); 
+		return getBounds().intersects(entity.getBounds());
 	}
-	
+
 	public Rectangle2D getBounds() {
-		return new Rectangle2D.Double(x, y, width, height);	
+		return new Rectangle2D.Double(x, y, width, height);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -125,30 +125,37 @@ public class Entity {
 		this.x = x;
 		this.y = y;
 		this.scene = scene;
-		
-		scene.addEntity(this); 
+
+		scene.addEntity(this);
 		width = 32;
 		height = 32;
 		init();
 	}
-	
-	public void init() {
-	
-	}
-	
-	//private Toolkit t = Toolkit.getDefaultToolkit();
-	public void render (Graphics g) {
-	g.setColor(Color.BLUE);
-		g.fillRect((int)x, (int)y, (int)width, (int)height); 
-	//	g.drawImage(t.getImage("Picture.PNG"), (int)x, (int)y, (int)width, (int)height, null);
 
-		//g.drawImage(Texture.loadImage("/res/t.PNG"), (int)x, (int)y, (int)width, (int)height, null);
+	public void init() {
+
 	}
-	
-	public void action() {}
-	
+
+	// private Toolkit t = Toolkit.getDefaultToolkit();
+	public void render(Graphics g) {
+//	g.setColor(Color.BLUE);
+		// g.fillRect((int)x, (int)y, (int)width, (int)height);
+		// g.drawImage(t.getImage("Picture.PNG"), (int)x, (int)y, (int)width,
+		// (int)height, null);
+
+		if (texture != null)
+			g.drawImage(texture.getImage(), (int) x, (int) y, (int) width, (int) height, null);
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect((int) x, (int) y, (int) width, (int) height);
+		}
+	}
+
+	public void action() {
+	}
+
 	public void update() {
-		for(Component c : components) {
+		for (Component c : components) {
 			c.update();
 		}
 		action();
