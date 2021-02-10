@@ -18,6 +18,35 @@ public class Entity {
 	protected double x, y, width, height;
 	protected Scene scene;
 	protected String texture;
+	protected String name;
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LinkedList<Component> getComponents() {
+		return components;
+	}
+
+	public void setComponents(LinkedList<Component> components) {
+		this.components = components;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
 	public LinkedList<Component> components = new LinkedList<Component>();
 
 	
