@@ -18,7 +18,7 @@ public class Player extends Entity{
 	
 	public void init() {
 		addComponent(new Physics()); 
-		
+		texture = "chicken.png";
 		p = (Physics) components.get(0);
 	}
 	
