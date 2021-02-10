@@ -1,7 +1,8 @@
 package game.entities.player;
 
-import core.entities.Entity;
 import core.Scene;
+import core.entities.Entity;
+import game.entities.player.components.PlayerMovement;
 
 public class Player extends Entity{
 
@@ -9,14 +10,12 @@ public class Player extends Entity{
 		super(x, y, scene);
 		// TODO Auto-generated constructor stub
 	}
-
-	public void update() {
-		
-		x = 100;
-		y = 100;
-		
-		
+	
+	public void init() {
+		addComponent(new PlayerMovement());
 	}
+
+	
 	
 	
 }
