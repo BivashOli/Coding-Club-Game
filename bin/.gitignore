@@ -21,20 +21,13 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-<<<<<<< HEAD
+/.DS_Store
 /.classpath
 /.gitattributes
 /.gitignore
 /.project
 /.settings/
-<<<<<<< HEAD
-=======
 /core/
->>>>>>> 8efd28c07bc9c72016618b40fabda975d9e2bf16
 /game/
-=======
 /res/
-/core/
->>>>>>> 594b1e968d2a71613751e344bac3cc38a2ed38f4
 /test/
-/game/
