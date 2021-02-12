@@ -2,11 +2,8 @@ package game.entities.player;
 
 import core.Scene;
 import core.entities.Entity;
-<<<<<<< HEAD
 import game.scenes.TestScene;
-=======
 import core.gfx.Texture;
->>>>>>> 594b1e968d2a71613751e344bac3cc38a2ed38f4
 import game.components.Health;
 import game.entities.player.components.PlayerMovement;
 
