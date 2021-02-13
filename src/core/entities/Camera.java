@@ -4,8 +4,8 @@ import core.Display;
 
 public class Camera {
 
-	private double x, y;
-	private Entity entity;
+	private int x, y;
+	public Entity entity;
 	
 	public Camera(int x, int y, Entity entity) {
 		this.x = x;
@@ -14,11 +14,11 @@ public class Camera {
 	}
 
 	public void update() {
-		x = -entity.getX() + Display.WIDTH/2;
-		y = -entity.getY() + Display.HEIGHT/2;
+		x = (int)-entity.getX() + Display.WIDTH/2;
+		y = (int)-entity.getY() + Display.HEIGHT/2;
 	}
 
-	public double getX() {
+	public int getX() {
 		return x;
 	}
 
@@ -26,7 +26,7 @@ public class Camera {
 		this.x = x;
 	}
 
-	public double getY() {
+	public int getY() {
 		return y;
 	}
 

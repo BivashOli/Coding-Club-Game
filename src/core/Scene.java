@@ -1,5 +1,6 @@
 package core;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.LinkedList;
@@ -60,25 +61,37 @@ public class Scene {
 	}
 
 	public void render(Graphics g) {
-		if (camera != null) {
-			g2d = (Graphics2D) g;
+		g2d = (Graphics2D) g;
+
+//		if (camera != null) {
+	//	System.out.println(camera.getX() + " " + camera.getY());
 			g2d.translate(camera.getX(), camera.getY());
-		}
+	//		g.setColor(Color.green);
+	//		g.drawRect(camera.getX(), camera.getY(), Display.WIDTH, Display.HEIGHT);
+		//	g.drawRect((int)camera.entity.getX(), (int)camera.entity.getY(), Display.WIDTH, Display.HEIGHT);
+//		} 
 		draw();
 		for (Entity entity : entities) {
-			entity.render(g);
+			//double entityX = entity.getX();
+			//double entityY = entity.getY();
+			
+		//	double width = 2 * camera.entity.getX();
+		//	double height = 2 * camera.entity.getY(); 
+			
+		//	if(  !( entityX > (width + 100) || entityX < (width - Display.WIDTH - 100) || entityY < (height - Display.HEIGHT - 100) || entityY > (height + 100)) ){
+				entity.render(g);
+		//	}
 		}
-		if (camera != null) {
-			g2d = (Graphics2D) g;
+	//	if (camera != null) {
 			g2d.translate(-camera.getX(), -camera.getY());
-		}
+	//	}
 	}
 
 	public void update() {
 		action();
-		if (camera != null) {
+	//	if (camera != null) {
 			camera.update();
-		}
+		//}
 		for (Entity entity : entities) {
 			entity.update();
 		}

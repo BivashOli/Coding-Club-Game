@@ -143,6 +143,7 @@ public class Entity {
 		// g.drawImage(t.getImage("Picture.PNG"), (int)x, (int)y, (int)width,
 		// (int)height, null);
 
+		System.out.println(name);
 		if (texture != null)
 			g.drawImage(texture.getImage(), (int) x, (int) y, (int) width, (int) height, null);
 		else {

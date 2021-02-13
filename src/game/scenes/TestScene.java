@@ -7,7 +7,7 @@ import game.entities.player.Player;
 
 public class TestScene extends Scene {
 
-	public void init() {
+	public void init() {	
 	
 		Player player = new Player(30, 30, this);
 		camera = new Camera(0, 0, player);
