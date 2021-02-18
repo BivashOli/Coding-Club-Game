@@ -22,12 +22,4 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 /.DS_Store
-/.classpath
-/.gitattributes
-/.gitignore
-/.project
-/.settings/
-/core/
 /game/
-/res/
-/test/
