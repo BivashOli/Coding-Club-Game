@@ -2,8 +2,7 @@ package test;
 
 import java.awt.event.KeyEvent;
 import core.entities.Entity;
-
-
+import core.gfx.Texture;
 import core.KeyInput;
 import core.Scene;
 import core.components.Physics;
@@ -17,9 +16,11 @@ public class Player extends Entity{
 	}
 	
 	public void init() {
-		texture = "/res/chicken.jpg";
+		texture = new Texture("/res/chicken.jpg");
 
 		addComponent(new Physics()); 
+		width = 400;
+		height = 200;
 		//p = (Physics) components.get(0);
 	}
 	
