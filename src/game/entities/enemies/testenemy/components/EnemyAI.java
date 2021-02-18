@@ -33,8 +33,8 @@ public class EnemyAI extends Component {
 	}
 	
 	public void detect() {
-		private Player player = (Player) entity.getScene().getEntity("Player");
-		private Enemy enemy = (Enemy) entity.getScene().getEntity("Enemy");
+		Player player = (Player) entity.getScene().getEntity("Player");
+		Enemy enemy = (Enemy) entity.getScene().getEntity("Enemy");
 		
 		//move left
 		if(player.getX() < enemy.getX()) {
