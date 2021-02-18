@@ -5,7 +5,7 @@ import core.entities.Entity;
 
 public class Item extends Entity{
 
-	public Item(int x, int y, Scene scene) {
+	public Item(double x, double y, Scene scene) {
 		super(x, y, scene);
 	}
 

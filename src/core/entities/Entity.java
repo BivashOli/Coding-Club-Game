@@ -121,7 +121,7 @@ public class Entity {
 		this.scene = scene;
 	}
 
-	public Entity(int x, int y, Scene scene) {
+	public Entity(double x, double y, Scene scene) {
 		this.x = x;
 		this.y = y;
 		this.scene = scene;

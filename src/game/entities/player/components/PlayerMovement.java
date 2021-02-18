@@ -69,7 +69,7 @@ public class PlayerMovement extends Component {
 			System.out.println(stamina);
 			if (stamina > 0) {
 				currentvelocity = defaultvelocity+3;
-				System.out.println("velocity is at 8");
+			
 			}
 			else
 				currentvelocity = defaultvelocity;
