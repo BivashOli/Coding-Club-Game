@@ -23,3 +23,5 @@ $RECYCLE.BIN/
 # =========================
 /.DS_Store
 /game/
+/core/
+/test/
