@@ -1,5 +1,12 @@
 package core.entities.items;
 
-public class Item {
+import core.Scene;
+import core.entities.Entity;
+
+public class Item extends Entity{
+
+	public Item(int x, int y, Scene scene) {
+		super(x, y, scene);
+	}
 
 }
