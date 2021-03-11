@@ -21,3 +21,12 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+/.DS_Store
+<<<<<<< Updated upstream
+/game/
+/core/
+/test/
+=======
+/res/
+/game/
+>>>>>>> Stashed changes
