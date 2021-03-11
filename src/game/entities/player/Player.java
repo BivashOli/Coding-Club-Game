@@ -26,7 +26,7 @@ public class Player extends Entity{
 		texture = new Texture("/res/t.png");
 		addComponent(new PlayerMovement());
 	 	addComponent(new Health(100));
-	 	excalibur = new Sword(x, y, scene, 1000.0, 1000.0, 1000.0);
+	 	excalibur = new Sword(x, y, scene, 10.0, 10.0, 10.0);
 	}
 	
 	public void action() {

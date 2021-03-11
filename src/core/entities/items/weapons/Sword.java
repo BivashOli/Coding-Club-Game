@@ -12,7 +12,7 @@ public class Sword extends Weapon {
 	
 	public void init() {
 		
-		width = 50;
+		width = 3;
 		height = 10;
 		texture = new Texture("/res/t.png");
 		
